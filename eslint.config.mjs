@@ -19,12 +19,13 @@ export default [
       "@typescript-eslint": tsEslintPlugin
     },
     rules: {
+      "no-unused-vars": "off",
       "no-case-declarations": "off", // 禁用 switch 语句中变量声明的检查
       "no-constant-condition": "off", // 禁用常量条件检查
       "@typescript-eslint/ban-ts-comment": "off", // 禁用 TypeScript 注释的检查
-      "@typescript-eslint/no-explicit-any": "warn", // 警告使用 any 类型
-    },
+      "@typescript-eslint/no-explicit-any": "warn", // 警告使用 any 类型,
+    }
   },
   eslint.configs.recommended, // 继承 ESLint 官方推荐的 JavaScript 配置
-  // tseslint.configs.recommended, // 继承 TypeScript ESLint 插件的推荐配置
+  // tseslint.configs.recommended, // 把这行去掉就对了,好奇怪啊
 ];
