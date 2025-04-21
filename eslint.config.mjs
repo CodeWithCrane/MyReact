@@ -1,14 +1,14 @@
 // .eslint.config.mjs
 import globals from "globals";
 import eslint from "@eslint/js";
-import tseslint from "typescript-eslint";
+import tsEslint from "typescript-eslint";
 import tsParser from "@typescript-eslint/parser";
 import tsEslintPlugin from "@typescript-eslint/eslint-plugin";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
-    files: ["**/*.{js,mjs,cjs,ts,tsx}"], // 定义适用的文件类型
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"], // 定义适用的文件类型
     languageOptions: {
       globals: { ...globals.browser, ...globals.node }, // 合并浏览器和 Node.js 的全局变量
       ecmaVersion: "latest", // 支持最新 ECMAScript 版本
@@ -27,5 +27,5 @@ export default [
     }
   },
   eslint.configs.recommended, // 继承 ESLint 官方推荐的 JavaScript 配置
-  // tseslint.configs.recommended, // 把这行去掉就对了,好奇怪啊
+  tsEslint.configs.recommended, // 把这行去掉就对了,好奇怪啊
 ];
